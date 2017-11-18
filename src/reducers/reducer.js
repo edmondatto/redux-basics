@@ -1,33 +1,46 @@
 import * as BooksActionTypes from '../actiontypes/books';
 
-const initialState =[
-  {
-    title: 'Notting Hill',
-    author: 'Mark Twain',
-    description: 'A book about a hill',
-    publicationDate: '10-10-2010',
-    id: 1
-  },
-  {
-    title: 'David Copperfield',
-    author: 'Leonardo DaVinci',
-    description: 'A book about a copper field',
-    publicationDate: '7-13-2001',
-    id: 2
-  },
-  {
-    title: 'Splinter cell',
-    author: 'Tom Clancy',
-    description: 'A book about a spy',
-    publicationDate: '18-1-2015',
-    id: 3
-  },
-];
+const initialState = {
+  books: [
+    {
+      title: 'Notting Hill',
+      author: 'Mark Twain',
+      description: 'A book about a hill',
+      publicationDate: '10-10-2010',
+      id: 1
+    },
+    {
+      title: 'David Copperfield',
+      author: 'Leonardo DaVinci',
+      description: 'A book about a copper field',
+      publicationDate: '7-13-2001',
+      id: 2
+    },
+    {
+      title: 'Splinter cell',
+      author: 'Tom Clancy',
+      description: 'A book about a spy',
+      publicationDate: '18-1-2015',
+      id: 3
+    }
+  ]
+};
 
 export default function BookReducer (state=initialState, action) {
   switch (action.type) {
     case action.type === BooksActionTypes.ADD_BOOK:
-      return state;
+      return {
+        books: [
+          ...state.books,
+          {
+            title: action.data.title,
+            author: action.data.author,
+            description: action.data.description,
+            publicationDate: action.data.publicationDate,
+            id: 4
+          }
+        ]
+      };
 
     default:
       return state;
