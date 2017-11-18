@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import '../../App.css';
 import BookCard from "../BookCard";
 import {connect} from "react-redux";
+import FormInput from "../FormInput";
 
 class App extends Component {
   render() {
-    const {books, dispatch} = this.props;
+    const {data, dispatch} = this.props;
 
-    const bookComponents = books.map((book, index) => (
+    const bookComponents = data.books.map((book, index) => (
       <BookCard
         title={book.title}
         author={book.author}
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <div className="container">
         { bookComponents }
+        <FormInput dispatch={dispatch}/>
       </div>
     );
   }
@@ -27,7 +29,7 @@ class App extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    books: state
+    data: state
   }
 };
 
