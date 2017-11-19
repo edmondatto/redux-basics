@@ -10,10 +10,7 @@ class App extends Component {
 
     const bookComponents = data.books.map((book, index) => (
       <BookCard
-        title={book.title}
-        author={book.author}
-        description={book.description}
-        publicationDate={book.publicationDate}
+        {...book}
         key={book.id}
       />
     ));
