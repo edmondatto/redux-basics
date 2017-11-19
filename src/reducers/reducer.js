@@ -42,6 +42,14 @@ export default function BookReducer (state=initialState, action) {
         ]
       };
 
+    case BooksActionTypes.DELETE_BOOK:
+      return {
+        books: [
+          ...state.books.slice(0, action.index),
+          ...state.books.slice(action.index + 1)
+        ]
+      };
+
     default:
       return state;
   }
