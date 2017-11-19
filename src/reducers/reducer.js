@@ -28,7 +28,7 @@ const initialState = {
 
 export default function BookReducer (state=initialState, action) {
   switch (action.type) {
-    case action.type === BooksActionTypes.ADD_BOOK:
+    case BooksActionTypes.ADD_BOOK:
       return {
         books: [
           ...state.books,
