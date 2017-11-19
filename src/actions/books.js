@@ -6,3 +6,10 @@ export const addBook = data => {
     data
   }
 };
+
+export const deleteBook = index => {
+  return {
+    type: BookActionTypes.DELETE_BOOK,
+    index
+  }
+};
