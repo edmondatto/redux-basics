@@ -17,6 +17,7 @@ class FormInput extends Component {
       id: 4
     };
     this.props.dispatch(addBook(data));
+    event.target.reset();
 
   };
 
