@@ -7,6 +7,7 @@ const BookCard = props =>
     <h5>{ props.author }</h5>
     <p>{ props.description }</ p>
     <p><strong>Publication date: </strong>{ props.publicationDate }</p>
+    <input type="button" value="Delete Book" onClick={props.handleDelete}/>
   </div>;
 
 BookCard.propTypes = {
@@ -14,6 +15,7 @@ BookCard.propTypes = {
   author: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   publicationDate: PropTypes.string.isRequired,
+  handleDelete: PropTypes.func.isRequired,
 };
 
 export default BookCard;
