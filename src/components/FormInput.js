@@ -10,10 +10,10 @@ class FormInput extends Component {
     const description = this.description.value;
     const publicationDate = this.publicationDate.value;
     const data = {
-      title: title,
-      author: author,
-      description: description,
-      publicationDate: publicationDate,
+      title,
+      author,
+      description,
+      publicationDate,
       id: 4
     };
     this.props.dispatch(addBook(data));
