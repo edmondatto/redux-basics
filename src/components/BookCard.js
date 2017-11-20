@@ -19,25 +19,12 @@ class BookCard extends Component {
       isEditing: !this.state.isEditing
     });
 
-  handleAuthorInput = e =>
-    this.setState({
-      pendingAuthor: e.target.value
-    });
-
-  handleDescriptionInput = e =>
-    this.setState({
-      pendingDescription: e.target.value
-    });
-
-  handleDateInput = e =>
-    this.setState({
-      pendingPublicationDate: e.target.value
-    });
-
-  handleTitleInput = e =>
-    this.setState({
-      pendingTitle: e.target.value
-    });
+  handleInput = event => {
+    const target = event.target;
+    const value = target.value;
+    const name = target.name;
+    this.setState({[name]: value})
+  };
 
   handleEditing = event => {
     event.preventDefault();
@@ -65,25 +52,30 @@ class BookCard extends Component {
             <input
               type="text"
               defaultValue={this.props.title}
-              onChange={this.handleTitleInput}
+              onChange={this.handleInput}
               placeholder="Enter Book title"
+              name="pendingAuthor"
             />
             <input
               type="text"
               defaultValue={this.props.author}
-              onChange={this.handleAuthorInput}
-              placeholder="Enter Author name"/>
+              onChange={this.handleInput}
+              placeholder="Enter Author name"
+              name="pendingAuthor"
+            />
             <input
               type="text"
               defaultValue={this.props.description}
-              onChange={this.handleDescriptionInput}
+              onChange={this.handleInput}
               placeholder="Enter Book description"
+              name="pendingDescription"
             />
             <input
               type="text"
               defaultValue={this.props.publicationDate}
-              onChange={this.handleDateInput}
+              onChange={this.handleInput}
               placeholder="Enter publication date"
+              name="pendingPublicationDate"
             />
             <input
               type="submit"
