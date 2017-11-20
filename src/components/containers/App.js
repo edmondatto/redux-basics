@@ -13,6 +13,8 @@ class App extends Component {
         {...book}
         handleDelete={() => dispatch(deleteBook(index))}
         key={book.id}
+        dispatch={dispatch}
+        index={index}
       />
     ));
 
