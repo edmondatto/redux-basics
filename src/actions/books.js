@@ -13,3 +13,11 @@ export const deleteBook = index => {
     index
   }
 };
+
+export const editBook = (index, data) => {
+  return {
+    type: BookActionTypes.EDIT_BOOK,
+    data,
+    index
+  }
+};
